@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import { Banner } from "../ui/Banner"
 
 export const HomePage = () => {
@@ -28,7 +29,12 @@ export const HomePage = () => {
           <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
               <img src="./exp/keltoi.png" alt="" width={100}/>
           </div>
-          <p className="my-4 text-uppercase">para ver al detalle el producto especial de cada expansión <a className="text-warning fw-bold" href="/cartas">click aquí!</a></p>
+          
+          <p className="my-4 text-uppercase">{'para ver al detalle el producto especial de cada expansión '}  
+            <NavLink className="text-warning fw-bold" to="/cartas">
+              click aquí!
+            </NavLink>
+          </p>
         </div>
       </div>
       
