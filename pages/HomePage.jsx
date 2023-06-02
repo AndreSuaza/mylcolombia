@@ -9,7 +9,7 @@ export const HomePage = () => {
     <>
       <Banner/>
       <div className="my-4 container text-center">
-        <h2 className="mb-4 text-white">Expanciones en Formato</h2>
+        <h2 className="mb-4 text-white">Expansiones en Formato</h2>
         <div className="row">
           <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
               <img src="./exp/despertar_gotico.png" alt="" width={100}/>
@@ -56,7 +56,7 @@ export const HomePage = () => {
             <div className="col-sm-6 mb-3 mb-sm-0">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">Lista de Baneos</h5>
+                  <h5 className="card-title">Lista de cartas limitadas/prohibidas</h5>
                   <p className="card-text text-white">Hay poderes que se salen de las manos y destruyen del Mundo.</p>
                   <a href="https://drive.google.com/file/d/1sw0Y9N1P386fj3gtndDwxD5LzsQxewOJ/view?usp=drive_link"
                     target="_blank"
