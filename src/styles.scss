@@ -1,0 +1,47 @@
+
+
+
+$theme-colors: (
+  "primary":    #420c98,
+  // "secondary":  $secondary,
+  "success":    #09ad01,
+  // "info":       $info,
+  "warning":    #dafa06,
+  "danger":     #fa0617,
+  // "light":      $light,
+  "dark":       #0d0d0d
+);
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+
+[data-bs-theme="dark"] {
+  --bs-body-color: #dafa06;
+  --bs-body-color-rgb: #dafa06;
+  --bs-body-bg: #160f1d;
+  --bs-body-bg-rgb: #{to-rgb($blue)};
+  --bs-tertiary-bg: #{$blue-600};
+
+  .dropdown-menu {
+    --bs-dropdown-bg: #{mix($blue-500, $blue-600)};
+    --bs-dropdown-link-active-bg: #{$blue-700};
+  }
+
+  .btn-primary {
+    --bs-btn-color: #dafa06;
+    --bs-btn-hover-color: #dafa06;
+  }
+}
+
+
+span.icon_down_dir {
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 16px;
+
+}
+
+span.icon_down_dir:before {
+  content: "";
+}
