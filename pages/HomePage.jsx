@@ -10,25 +10,25 @@ export const HomePage = () => {
       <div className="my-4 container text-center">
         <h2 className="mb-4 text-white">Expanciones en Formato</h2>
         <div className="row">
-          <div className="col-2 mt-2 px-3">
+          <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
               <img src="./exp/despertar_gotico.png" alt="" width={100}/>
           </div>
-          <div className="col-2 px-3" style={{marginTop: -15}}>
+          <div className="col-lg-2 col-md-4 col-xs-4" style={{marginTop: -15}}>
               <img src="./exp/cid.png" alt="" width={100}/>
           </div>
-          <div className="col-2 mt-2 px-3">
+          <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
               <img src="./exp/acero.png" alt="" width={100}/>
           </div>
-          <div className="col-2 mt-2 px-3">
+          <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
               <img src="./exp/angeles-demonios.png" alt="" width={100}/>
           </div>
-          <div className="col-2 mt-2 px-3">
+          <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
               <img src="./exp/tierra-austral.png" alt="" width={100}/>
           </div>
-          <div className="col-2 mt-2 px-3">
+          <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
               <img src="./exp/keltoi.png" alt="" width={100}/>
           </div>
-          <p className="my-2 text-uppercase">para ver al detalle el producto especial de cada expansión <a className="text-warning fw-bold" href="/cartas">click aquí!</a></p>
+          <p className="my-4 text-uppercase">para ver al detalle el producto especial de cada expansión <a className="text-warning fw-bold" href="/cartas">click aquí!</a></p>
         </div>
       </div>
       
