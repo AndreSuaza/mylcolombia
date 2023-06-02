@@ -54,7 +54,7 @@ export const CardItem = ({ card , isloading }) => {
       { !detail && 
       <>
         <img 
-          src='../src/assets/reverso.png' 
+          src='./reverso.png' 
           className="img-fluid mb-2" 
           alt={name}
           style={!loaded ? { display: 'inline-block', width: "100%" } : { display: 'none' }}
