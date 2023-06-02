@@ -59,7 +59,7 @@ export const CardItem = ({ card , isloading }) => {
           alt={name}
           style={!loaded ? { display: 'inline-block', width: "100%" } : { display: 'none' }}
         />
-        { !loaded && <div className="position-absolute top-0 end-0 me-3"> 
+        { !loaded && <div className="position-absolute top-0 end-0 me-3 mt-2"> 
             <div className="spinner-border text-primary" role="status">
               <span className="visually-hidden">Loading...</span>
             </div>
