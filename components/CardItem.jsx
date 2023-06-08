@@ -59,11 +59,17 @@ export const CardItem = ({ card , isloading }) => {
           alt={name}
           style={!loaded ? { display: 'inline-block', width: "100%" } : { display: 'none' }}
         />
-        { !loaded && <div className="position-absolute top-0 end-0 me-3 mt-2"> 
+        { !loaded && 
+          <>
+          <div className="position-absolute top-0 end-0 me-3 mt-2"> 
             <div className="spinner-border text-primary" role="status">
               <span className="visually-hidden">Loading...</span>
             </div>
           </div>
+          <div className="position-absolute top-0 start-0 me-3 mt-2"> 
+            <p className="bg-primary text-white bg-opacity-75 fs-6 px-2 rounded-end ms-2">{card.name}</p>
+          </div>
+          </>
         }
         <img 
           ref={imageCard}
@@ -124,7 +130,7 @@ export const CardItem = ({ card , isloading }) => {
           </div>
         </div>
         <div className="position-absolute me-2 mt-2 top-0 end-0" onClick={onShowDetail}>
-          <h1 style={{cursor: 'pointer'}}><i className="bi bi-x-square"></i></h1>
+          <span style={{cursor: 'pointer'}}><i className="bi bi-x-square fs-1 me-2"></i></span>
         </div>
       </div>
     </div>}

@@ -25,7 +25,7 @@ export const CartasPage = () => {
     }
   }
 
-  const limit = 100;
+  const limit = 60;
   
   const getFetch = async ( offset ) => {
 

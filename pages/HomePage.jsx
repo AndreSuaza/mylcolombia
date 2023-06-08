@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import { Banner } from "../ui/Banner"
+import { Banner } from "../ui/Banner/Banner"
 
 export const HomePage = () => {
 

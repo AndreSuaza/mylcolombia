@@ -9,17 +9,17 @@ export const Navbar = () => {
             </a>
             <div className="offcanvas-body p-4 pt-0 p-lg-0">
                 <ul className="navbar-nav bd-navbar-nav justify-content-end text-center">
-                    <li className="nav-item col-lg-1 col-md-2 col-xs-12">
+                    <li>
                         <NavLink 
-                            className={({isActive}) => `nav-link ${ isActive ? 'nav-link py-2 px-0 px-lg-2 text-warning' : 'nav-link py-2 px-0 px-lg-2'}`}
+                            className={({isActive}) => `nav-link nav-link fw-bold fs-5 px-3 text-uppercase ${ isActive ? ' text-warning' : ''}`}
                             to="/home"
                         >
                             Inicio
                         </NavLink>
                     </li>
-                    <li className="nav-item col-lg-1 col-md-2 col-xs-12">
+                    <li>
                         <NavLink 
-                            className={({isActive}) => `nav-link ${ isActive ? 'nav-link py-2 px-0 px-lg-2 text-warning' : 'nav-link py-2 px-0 px-lg-2'}`}
+                            className={({isActive}) => `nav-link nav-link fw-bold fs-5 px-3 text-uppercase ${ isActive ? ' text-warning' : ''}`}
                             to="/cartas"
                         >
                             Cartas
