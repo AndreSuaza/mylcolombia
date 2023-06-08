@@ -1,0 +1,14 @@
+
+.bg-banner{
+    transition: background-image 1s;
+}
+.bg-button-banner{
+    transition: background-color 1s;
+}
+.bg-button-banner:hover {
+    background-color: #00000029;   
+}
+
+.font-border {
+    -webkit-text-stroke: 1px black;
+}
