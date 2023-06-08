@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import { Banner } from "../ui/Banner/Banner"
+import { BannerImg } from "../ui/Banner/BannerImg"
 
 export const HomePage = () => {
 
@@ -7,7 +7,7 @@ export const HomePage = () => {
 
   return (
     <>
-      <Banner/>
+      <BannerImg/>
       <div className="my-4 container text-center">
         <h2 className="mb-4 text-white">Expansiones en Formato</h2>
         <div className="row">
@@ -48,7 +48,7 @@ export const HomePage = () => {
                   <a 
                     href="https://blog.myl.cl/wp-content/uploads/2021/11/Cuentos-de-Terror-Manual-Iniciatico.pdf" 
                     className="btn btn-primary"
-                    target="_blank"
+                    target="_blank" rel="noreferrer"
                   >Iniciar a Jugar!</a>
                 </div>
               </div>
@@ -59,7 +59,7 @@ export const HomePage = () => {
                   <h5 className="card-title">Lista de cartas limitadas/prohibidas</h5>
                   <p className="card-text text-white">Hay poderes que se salen de las manos y destruyen del Mundo.</p>
                   <a href="https://drive.google.com/file/d/1sw0Y9N1P386fj3gtndDwxD5LzsQxewOJ/view?usp=drive_link"
-                    target="_blank"
+                    target="_blank" rel="noreferrer"
                     className="btn btn-primary">Cuales son ?</a>
                 </div>
               </div>
@@ -72,7 +72,7 @@ export const HomePage = () => {
                   <h5 className="card-title">DAR</h5>
                   <p className="card-text text-white">Reglamento de Mitos y Leyendas.</p>
                   <a href="https://drive.google.com/file/d/1QXm7cw3bcDSulWx7KVEZK9xUaPoIX0zm/view?usp=drive_link" 
-                  target="_blank"
+                  target="_blank" rel="noreferrer"
                   className="btn btn-primary">Ver Documento !</a>
                 </div>
               </div>
@@ -82,7 +82,11 @@ export const HomePage = () => {
                 <div className="card-body">
                   <h5 className="card-title">Erratas</h5>
                   <p className="card-text text-white">Ver cambios realizados a cartas.</p>
-                  <a href="https://drive.google.com/file/d/1sC1kysZaMOxWZfQeDUxQ67YIA-qIQG6b/view?usp=drive_link" target="_blank" className="btn btn-primary">Ver Documento !</a>
+                  <a href="https://drive.google.com/file/d/1sC1kysZaMOxWZfQeDUxQ67YIA-qIQG6b/view?usp=drive_link" 
+                    target="_blank" rel="noreferrer"
+                    className="btn btn-primary">
+                      Ver Documento !
+                  </a>
                 </div>
               </div>
             </div>

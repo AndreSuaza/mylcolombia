@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import './styles.css';
 
-export const Banner = () => {
+export const BannerImg = () => {
 
     const height = window.innerHeight;
     const [currentImage, setCurrentImage] = useState(0);
