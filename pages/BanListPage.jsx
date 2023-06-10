@@ -70,15 +70,31 @@ useEffect(() => {
 
   return (
     <section className="container mt-4 mb-lg-5 pb-5">
+
         <h1>Lista De Cartas Limitadas/Prohibidas</h1>
-        <h2 className="py-4">Imperio Prohibidas</h2>
-        <CardsGrid data={cardsData.cardsImperio0} isloading={cardsData.isloading} cardsCol={'2'} detailCard={false}/>
-        <h2 className="py-4">Imperio Limitadas A Uno</h2>
-        <CardsGrid data={cardsData.cardsImperio1} isloading={cardsData.isloading} cardsCol={'2'} detailCard={false}/>
-        <h2 className="py-4">VCR Prohibidas</h2>
-        <CardsGrid data={cardsData.cardsVcr0} isloading={cardsData.isloading} cardsCol={'2'} detailCard={false}/>
-        <h2 className="py-4">VCR Limitadas A Uno</h2>
-        <CardsGrid data={cardsData.cardsVcr1} isloading={cardsData.isloading} cardsCol={'2'} detailCard={false}/>
+        
+        <div className="row mb-5 mt-5">
+            <div className="card">
+                <div className="card-body">
+                    <h2 className="py-4">VCR Prohibidas</h2>
+                    <CardsGrid data={cardsData.cardsVcr0} isloading={cardsData.isloading} cardsCol={'2'} detailCard={false}/>
+                    <h2 className="py-4">VCR Limitadas A Uno</h2>
+                    <CardsGrid data={cardsData.cardsVcr1} isloading={cardsData.isloading} cardsCol={'2'} detailCard={false}/>
+                </div>
+            </div>
+        </div>
+
+        <div className="row mb-5">
+            <div className="card">
+                <div className="card-body">
+                    <h2 className="py-4">Imperio Prohibidas</h2>
+                    <CardsGrid data={cardsData.cardsImperio0} isloading={cardsData.isloading} cardsCol={'2'} detailCard={false}/>
+                    <h2 className="py-4">Imperio Limitadas A Uno</h2>
+                    <CardsGrid data={cardsData.cardsImperio1} isloading={cardsData.isloading} cardsCol={'2'} detailCard={false}/>
+                </div>
+            </div>
+        </div>
+
   </section>
     
   )
