@@ -73,11 +73,11 @@ useEffect(() => {
         <h1>Lista De Cartas Limitadas/Prohibidas</h1>
         <h2 className="py-4">Imperio Prohibidas</h2>
         <CardsGrid data={cardsData.cardsImperio0} isloading={cardsData.isloading} cardsCol={'2'} detailCard={false}/>
-        <h2 className="py-4">Imperio Limitadas</h2>
+        <h2 className="py-4">Imperio Limitadas A Uno</h2>
         <CardsGrid data={cardsData.cardsImperio1} isloading={cardsData.isloading} cardsCol={'2'} detailCard={false}/>
         <h2 className="py-4">VCR Prohibidas</h2>
         <CardsGrid data={cardsData.cardsVcr0} isloading={cardsData.isloading} cardsCol={'2'} detailCard={false}/>
-        <h2 className="py-4">VCR Limitadas</h2>
+        <h2 className="py-4">VCR Limitadas A Uno</h2>
         <CardsGrid data={cardsData.cardsVcr1} isloading={cardsData.isloading} cardsCol={'2'} detailCard={false}/>
   </section>
     
