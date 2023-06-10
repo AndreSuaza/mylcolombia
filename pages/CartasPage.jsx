@@ -30,7 +30,7 @@ export const CartasPage = () => {
   const getFetch = async ( offset ) => {
 
     setState({
-      ...cardsData,
+      ...state,
       isLoading: true,
     });
 

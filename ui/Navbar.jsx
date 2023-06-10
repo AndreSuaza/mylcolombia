@@ -25,6 +25,14 @@ export const Navbar = () => {
                             Cartas
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink 
+                            className={({isActive}) => `nav-link nav-link fw-bold fs-5 px-3 text-uppercase ${ isActive ? ' text-warning' : ''}`}
+                            to="/banlist"
+                        >
+                            Banlist
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
         </nav>

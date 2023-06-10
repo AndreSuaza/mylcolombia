@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { TYPES, RACES } from "../constants/constants";
 
-export const CardItem = ({ card , isloading }) => {
+export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true }) => {
 
   const { edid, ed_edid: edition , name, banlist = [] ,price } = card;
+
+
 
   const imageCard = useRef(null);
   const [loaded, setLoaded] = useState(false);
@@ -48,7 +50,7 @@ export const CardItem = ({ card , isloading }) => {
   return ( 
     <>
     <div 
-      className="col-lg-3 col-md-6 col-xs-12 mb-2 position-relative"
+      className={`col-lg-${cardsCol} col-md-6 col-xs-12 mb-2 position-relative`}
       onClick={onShowDetail}
     >
       { !detail && 
@@ -78,15 +80,15 @@ export const CardItem = ({ card , isloading }) => {
           alt={name}
           style={loaded ? { display: 'inline-block', width: "100%" } : { display: 'none' }}
         />
-        {price && 
+        {(detailCard && price ) && 
           <div className="position-absolute bottom-0 end-0 ">
             <p className="bg-success text-white bg-opacity-75 fs-6 px-2 rounded-start">{` $ ${price} `}</p>
           </div>
         }
-        { banlist.map((ban, index) => {
+        { detailCard && banlist.map((ban, index) => {
           return <div key={index} className="position-absolute top-0 end-0" style={{marginTop: 50}}>
             {ban['imperio'] &&  <span className="bg-danger text-white bg-opacity-75 fs-6 px-2 rounded-start d-block mb-1 text-start">{`Imp: ${ban['imperio']}`}</span>}
-            {ban['vcr']  && <span className="bg-danger text-white bg-opacity-75 fs-6 px-2 rounded-start d-block mb-1 text-start" style={{marginTop:30}}>{`Vcr: ${ban['vcr']}`}</span>}
+            {ban['vcr']  && <span className="bg-primary text-white bg-opacity-75 fs-6 px-2 rounded-start d-block mb-1 text-start" style={{marginTop:30}}>{`Vcr: ${ban['vcr']}`}</span>}
           </div>
         })}   
       </>

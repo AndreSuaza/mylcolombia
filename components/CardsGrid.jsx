@@ -1,7 +1,7 @@
 import { CardItem } from "./CardItem";
 
 
-export const CardsGrid = ({ data, isloading }) => {
+export const CardsGrid = ({ data, isloading, cardsCol, detailCard }) => {
 
     const cards = data ? data : [];
 
@@ -16,7 +16,7 @@ export const CardsGrid = ({ data, isloading }) => {
                     cards.map( ( card ) => (
 
                         
-                        <CardItem key={ card.id } card={card} isloading={isloading}/>
+                        <CardItem key={ card.id } card={card} isloading={isloading} cardsCol={cardsCol}  detailCard={detailCard}/>
                         
                     ))
                 }
