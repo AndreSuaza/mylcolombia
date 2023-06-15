@@ -26,7 +26,7 @@ export const FiltersCardsDeck = ({ onDetail, onAddCard }) => {
 
   const [state, setState] = useState({
     data: [],
-    isloading: true,
+    isLoading: false,
   });
 
 
@@ -34,27 +34,10 @@ export const FiltersCardsDeck = ({ onDetail, onAddCard }) => {
     setShowFilters(!showFilters);
   }
 
-  const getFetchText = async ( terms, limit = 10 ) => {
-
-    setState({
-      ...state,
-      isLoading: true,
-    });
-
-    const resp = await fetch( `https://us-east-1.aws.data.mongodb-api.com/app/data-xeoot/endpoint/getCartas?limit=${limit}&offset=0&text="${terms}"` );
-    const data = await resp.json();
-    const cards = data[0].cards ? data[0].cards : [];
-    setState({
-      data: cards,
-      isLoading: false,
-    });
-   
-  }
-
   const getFetch = async ( searchs, limit = 50 ) => {
 
     setState({
-      ...state,
+      data: [],
       isLoading: true,
     });
 
@@ -76,10 +59,31 @@ export const FiltersCardsDeck = ({ onDetail, onAddCard }) => {
     
   }
 
+  const termsFormat = ( terms ) => {
+    
+    const text = terms.split(",");
+    let termsEnd = "" ;
+
+    if( text.length > 1 ) {
+      text.map((term) => termsEnd+=term.trim()+" " ); 
+      return termsEnd;
+    } else {
+      return '"'+terms+'"';
+    }
+  
+  }
+
+  const onInputChange = ({target}) => {
+    setFiltersCards({
+    ...filtersCards,
+    term: target.value
+  })
+}
+
   const onSearchCards = () => {
 
     let query = '';
-  
+
     if (filtersCards.term !== '') {
       query += '&text='+termsFormat(filtersCards.term);
     }
@@ -109,10 +113,6 @@ export const FiltersCardsDeck = ({ onDetail, onAddCard }) => {
     }
   
     getFetch(`&${query}`);
-  }
-
-  const onInputChange = ({target}) => {
-    getFetchText( target.value );
   }
 
   const formatSelectedOtions = ( options ) => {
@@ -163,6 +163,7 @@ export const FiltersCardsDeck = ({ onDetail, onAddCard }) => {
           <input 
             className="form-control"
             placeholder="Palabra o Termino"
+            value={filtersCards.term}
             onChange={onInputChange}
           />
           <div style={{ textAlign: "right" }}>
@@ -258,21 +259,22 @@ export const FiltersCardsDeck = ({ onDetail, onAddCard }) => {
               />
             </div>
 
-            <button onClick={onSearchCards} className="btn btn-primary mt-2">Buscar</button>
+            
 
             
           </div>
+          <button onClick={onSearchCards} className="btn btn-primary mt-2">Buscar</button>
         </div>
       </div>
       <div>
         <div className="row border overflow-y-auto" style={{height: 400}}>      
 
-        { state.isloading ?
-          <h2 className="text-primary">Cargando ...</h2>
+        { state.isLoading ?
+          <h2 className="text-warning mt-2">Cargando ...</h2>
           : 
-          state.data.map( ( card ) => (     
+          state.data.map( ( card, index ) => (     
          
-            <div className="col-4 p-1">
+            <div key={index} className="col-4 p-1">
                 <img 
                   src={`https://api.myl.cl/static/cards/${card.ed_edid}/${card.edid}.png`} 
                   className="img-fluid border" 
