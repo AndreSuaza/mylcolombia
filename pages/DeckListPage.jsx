@@ -69,7 +69,7 @@ export const DeckListPage = () => {
     <div className="container">
       <h2 className="text-uppercase my-4">Crea tu mazo</h2>
         <div className="row">
-            <div className="col-2">
+            <div className="col-3">
               {card?.edid 
                 ?
                   <img 
