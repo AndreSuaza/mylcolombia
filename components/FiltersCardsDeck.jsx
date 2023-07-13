@@ -159,14 +159,21 @@ export const FiltersCardsDeck = ({ onDetail, onAddCard }) => {
   return (
     <div className="container text-center">
       <div className="row align-items-center">
-        <div className="col-12 mb-4">
-          <input 
-            className="form-control"
-            placeholder="Palabra o Termino"
-            value={filtersCards.term}
-            onChange={onInputChange}
-          />
-          <div style={{ textAlign: "right" }}>
+        <div className="col-12 mb-1">
+          <div className="row">
+          <div className="col-11">
+            <input 
+              className="form-control"
+              placeholder="Palabra o Termino"
+              value={filtersCards.term}
+              onChange={onInputChange}
+            />
+          </div>
+          <div className="col-1">
+            <button onClick={onSearchCards} className="btn btn-primary">Buscar</button>
+          </div>
+          </div>
+          <div style={{ textAlign: "left" }}>
             <span 
               style={{cursor: 'pointer', fontSize: 10}} 
               className="me-2"
@@ -263,18 +270,18 @@ export const FiltersCardsDeck = ({ onDetail, onAddCard }) => {
 
             
           </div>
-          <button onClick={onSearchCards} className="btn btn-primary mt-2">Buscar</button>
+         
         </div>
       </div>
       <div>
-        <div className="row border overflow-y-auto" style={{height: 400}}>      
+        <div className="row border overflow-y-auto" style={{height: 230}}>      
 
         { state.isLoading ?
           <h2 className="text-warning mt-2">Cargando ...</h2>
           : 
           state.data.map( ( card, index ) => (     
          
-            <div key={index} className="col-4 p-1">
+            <div key={index} className="col-2 p-1">
                 <img 
                   src={`https://api.myl.cl/static/cards/${card.ed_edid}/${card.edid}.png`} 
                   className="img-fluid border" 

@@ -69,7 +69,7 @@ export const DeckListPage = () => {
     <div className="container">
       <h2 className="text-uppercase my-4">Crea tu mazo</h2>
         <div className="row">
-            <div className="col-3">
+            <div className="col-2">
               {card?.edid 
                 ?
                   <img 
@@ -86,11 +86,16 @@ export const DeckListPage = () => {
                   
                 }
             </div>
-            <div  ref={exportRef} 
-              className="col-6 border position-relative"
+            <div className="col-9">
+                <FiltersCardsDeck onDetail={(card) => onCardDetail(card)} onAddCard={() => onAddCardToDeck (card)}/>
+            </div>
+        </div>
+        <div  ref={exportRef} 
+              className="row border position-relative mt-5"
               style={{
                 backgroundImage: `url('./decklist-bg.jpg')`,
                 backgroundSize: 'cover',
+                minHeight: "1000px"
               }}
             >
               <div className="position-absolute bottom-100 end-0 mb-2">
@@ -112,10 +117,9 @@ export const DeckListPage = () => {
                 Guardar <i className="bi bi-cloud-download"></i>
               </button>
               </div>
-              <div className="float-start">
+              <div className="float-start p-1">
                 { deck.map( ( card, index ) => (     
-          
-                  <div key={index} className="float-start p-1" style={{width: '10%'}}>
+                  <div key={index} className="float-start" style={{width: '100px', margin: '2px'}}>
                       <img 
                         src={`https://api.myl.cl/static/cards/${card.ed_edid}/${card.edid}.png`} 
                         className="img-fluid border"
@@ -128,10 +132,6 @@ export const DeckListPage = () => {
                 ))}
               </div>
             </div>
-            <div className="col-3">
-                <FiltersCardsDeck onDetail={(card) => onCardDetail(card)} onAddCard={() => onAddCardToDeck (card)}/>
-            </div>
-        </div>
     </div>
   )
 }
