@@ -119,15 +119,17 @@ export const DeckListPage = () => {
               </div>
               <div className="p-1">
                 { deck.map( ( card, index ) => (     
-                  <div key={index} className="float-start" style={{width: '100px', margin: '2px'}}>
+       
                       <img 
+                        key={card._id}
                         src={`https://api.myl.cl/static/cards/${card.ed_edid}/${card.edid}.png`} 
-                        className="img-fluid border"
-                        alt={card.name}
+                        className="img-fluid float-start"
+                        style={{width: '100px', margin: '2px'}}
+                        alt={index}
                         onClick={() => onDeleteCardToDeck(card, index)}
                         onMouseEnter={() => onCardDetail(card) }
                       />
-                  </div>
+               
         
                 ))}
               </div>
