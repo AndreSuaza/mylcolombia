@@ -69,7 +69,7 @@ export const DeckListPage = () => {
     <div className="container">
       <h2 className="text-uppercase my-4">Crea tu mazo</h2>
         <div className="row">
-            <div className="col-3">
+            <div className="col-2">
               {card?.edid 
                 ?
                   <img 
@@ -98,7 +98,7 @@ export const DeckListPage = () => {
                 minHeight: "1000px"
               }}
             >
-              <div className="position-absolute bottom-100 end-50 mb-2">
+              <div className="position-absolute bottom-100 end-0 mb-2">
               <button 
                 className="btn btn-success me-2"
                 >
@@ -117,20 +117,17 @@ export const DeckListPage = () => {
                 Guardar <i className="bi bi-cloud-download"></i>
               </button>
               </div>
-              <div className="p-1">
+              <div className="float-start p-1">
                 { deck.map( ( card, index ) => (     
-       
                       <img 
-                        key={card._id}
+                        key={`${card._id}-${index}`}
                         src={`https://api.myl.cl/static/cards/${card.ed_edid}/${card.edid}.png`} 
                         className="img-fluid float-start"
                         style={{width: '100px', margin: '2px'}}
-                        alt={index}
+                        alt={card.name}
                         onClick={() => onDeleteCardToDeck(card, index)}
                         onMouseEnter={() => onCardDetail(card) }
-                      />
-               
-        
+                      />        
                 ))}
               </div>
             </div>
