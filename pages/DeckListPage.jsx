@@ -69,6 +69,20 @@ export const DeckListPage = () => {
     setDeck([]);
   }
 
+  const orderByName = () => {
+    deck.sort((a,b) => {
+      if(a.name > b.name) {
+        return 1;
+      } 
+      if(a.name < b.name){
+        return -1;
+      }
+      
+      return 0;
+      
+    });
+  }
+ 
   return (
     <div className="container">
       <h2 className="text-uppercase my-4">Crea tu mazo</h2>
@@ -103,16 +117,22 @@ export const DeckListPage = () => {
               }}
             >
               <div className="position-absolute bottom-100 end-0 mb-2">
-              <button 
-                className="btn btn-success me-2"
-                >
-                ${deckPrice}
-              </button>
+                {/* <button 
+                  className="btn btn-success me-2"
+                  >
+                  ${deckPrice}
+                </button> */}
               <button 
                 className="btn btn-primary me-2"
                 onClick={onClearDeck}
                 >
                 Limpiar
+              </button>
+              <button 
+                className="btn btn-primary me-2"
+                onClick={orderByName}
+                >
+                Ordenar
               </button>
               <button 
                 className="btn btn-primary"
