@@ -86,7 +86,7 @@ export const DeckListPage = () => {
                   
                 }
             </div>
-            <div className="col-9">
+            <div className="col-9 mb-5">
                 <FiltersCardsDeck onDetail={(card) => onCardDetail(card)} onAddCard={() => onAddCardToDeck (card)}/>
             </div>
         </div>

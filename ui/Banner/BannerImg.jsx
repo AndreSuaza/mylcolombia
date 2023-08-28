@@ -5,7 +5,7 @@ export const BannerImg = () => {
 
     const height = window.innerHeight;
     const [currentImage, setCurrentImage] = useState(0);
-    const images = ['baner1.jpg','baner2.jpg'];
+    const images = ['baner1.jpg'];
 
     useEffect(() => {
         
@@ -42,14 +42,7 @@ export const BannerImg = () => {
                     target="_blank" rel="noreferrer"
                     >Aprende a jugar Mitos y Leyendas!</a>
             </div>}
-             {/* baner 2 */}
-             { currentImage === 1 &&<a href="https://www.instagram.com/myl_bogota_colombia/" 
-                target="_blank" rel="noreferrer"    
-             >  
-                <div style={{width: "100%", height: '100%'}}>
-                </div>
-            </a> }
-            <div 
+            {/* <div 
                 onClick={onChangeImage} 
                 className="bg-button-banner position-absolute top-0 start-0 fs-1 px-2" 
                 onMouseEnter={console.log('Entra')}
@@ -63,7 +56,7 @@ export const BannerImg = () => {
                 style={{height: '100%'}}
             >
                 <i className="position-relative top-50  bi bi-chevron-right"></i>
-            </div>    
+            </div>     */}
             
         </div>
     );

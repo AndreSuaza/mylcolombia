@@ -2,14 +2,14 @@
 
 
 $theme-colors: (
-  "primary":    #420c98,
+  "primary":    #11ad9e,
   // "secondary":  $secondary,
   "success":    #09ad01,
   // "info":       $info,
-  "warning":    #dafa06,
+  "warning":    #ffe400,
   "danger":     #fa0617,
   // "light":      $light,
-  "dark":       #0d0d0d
+  "dark":       #010101
 );
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
@@ -17,9 +17,9 @@ $theme-colors: (
 
 
 [data-bs-theme="dark"] {
-  --bs-body-color: #dafa06;
-  --bs-body-color-rgb: #dafa06;
-  --bs-body-bg: #160f1d;
+  --bs-body-color: #ffe400;
+  --bs-body-color-rgb: #ffe400;
+  --bs-body-bg: #010101;
   --bs-body-bg-rgb: #{to-rgb($blue)};
   --bs-tertiary-bg: #{$blue-600};
 
@@ -29,8 +29,8 @@ $theme-colors: (
   }
 
   .btn-primary {
-    --bs-btn-color: #dafa06;
-    --bs-btn-hover-color: #dafa06;
+    --bs-btn-color: #ffe400;
+    --bs-btn-hover-color: #ffe400;
   }
 }
 

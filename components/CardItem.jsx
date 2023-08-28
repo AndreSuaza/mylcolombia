@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { TYPES, RACES } from "../constants/constants";
 
-export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true }) => {
+export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true, popUp = true }) => {
 
   const { edid, ed_edid: edition , name, banlist = [] ,price } = card;
 
@@ -44,7 +44,9 @@ export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true }) 
   }, [detail])
 
   const onShowDetail = () => {
-    setDetail(!detail);
+    if(popUp){
+      setDetail(!detail);
+    }
   }
 
   return ( 

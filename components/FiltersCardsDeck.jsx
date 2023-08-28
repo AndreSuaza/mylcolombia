@@ -1,6 +1,7 @@
 import Multiselect from "multiselect-react-dropdown";
 import { useState } from "react";
 import { useFetch } from "../hooks/useFetch";
+import { CardItem } from "./CardItem";
 
 
 export const FiltersCardsDeck = ({ onDetail, onAddCard }) => {
@@ -34,7 +35,7 @@ export const FiltersCardsDeck = ({ onDetail, onAddCard }) => {
     setShowFilters(!showFilters);
   }
 
-  const getFetch = async ( searchs, limit = 50 ) => {
+  const getFetch = async ( searchs, limit = 200 ) => {
 
     setState({
       data: [],
@@ -161,7 +162,7 @@ export const FiltersCardsDeck = ({ onDetail, onAddCard }) => {
       <div className="row align-items-center">
         <div className="col-12 mb-1">
           <div className="row">
-          <div className="col-11">
+          <div className="col-11 p-0">
             <input 
               className="form-control"
               placeholder="Palabra o Termino"
@@ -274,21 +275,15 @@ export const FiltersCardsDeck = ({ onDetail, onAddCard }) => {
         </div>
       </div>
       <div>
-        <div className="row border overflow-y-auto" style={{height: 230}}>      
+        <div className="row border rounded overflow-y-auto" style={{height: 370}}>      
 
         { state.isLoading ?
           <h2 className="text-warning mt-2">Cargando ...</h2>
           : 
           state.data.map( ( card, index ) => (     
          
-            <div key={index} className="col-2 p-1">
-                <img 
-                  src={`https://api.myl.cl/static/cards/${card.ed_edid}/${card.edid}.png`} 
-                  className="img-fluid border" 
-                  alt={card.name}
-                  onMouseEnter={() => onDetail(card) }
-                  onClick={ ()=>onAddCard(card) }
-                />
+            <div key={index} className="col-2 p-1" onMouseEnter={() => onDetail(card) }  onClick={ ()=>onAddCard(card) }>
+               <CardItem key={ card.id } card={card} isloading cardsCol={12}  detailCard={false} popUp={false} />
             </div>
           
           ))
