@@ -2,12 +2,14 @@ import { useRef, useState } from "react";
 import { FiltersCardsDeck } from "../components/FiltersCardsDeck"
 import { createRef } from "react";
 import html2canvas from 'html2canvas';
+import { CardItem } from "../components/CardItem";
 
 export const DeckListPage = () => {
 
   const [card, setCard] = useState({});
   const [deck, setDeck] = useState([]);
   const [deckPrice, setDeckprice] = useState(0);
+  const [uuidIndex, setUuidIndex] = useState(0);
 
   const ref = createRef(null);
 
@@ -27,8 +29,10 @@ export const DeckListPage = () => {
 
 
   const onAddCardToDeck = (card) => {
+    setUuidIndex((uuid) => uuid+1)
+    const newCard = {...card, uuid: uuidIndex}
     if(rulesAddCards(card)) {
-      setDeck([...deck, card]);
+      setDeck([...deck, newCard]);
       setDeckprice( deckPrice+Number(card?.price || 0) );
     } 
   }
@@ -118,16 +122,16 @@ export const DeckListPage = () => {
               </button>
               </div>
               <div className="float-start p-1">
-                { deck.map( ( card, index ) => (     
-                      <img 
-                        key={`${card._id}-${index}`}
-                        src={`https://api.myl.cl/static/cards/${card.ed_edid}/${card.edid}.png`} 
-                        className="img-fluid float-start"
-                        style={{width: '100px', margin: '2px'}}
-                        alt={card.name}
-                        onClick={() => onDeleteCardToDeck(card, index)}
-                        onMouseEnter={() => onCardDetail(card) }
-                      />        
+                { deck.map( ( card, index ) => (
+                  <div 
+                      key={ card.uuid } 
+                      onMouseEnter={() => onCardDetail(card) }  
+                      onClick={ ()=>onDeleteCardToDeck(card, index) } 
+                      style={{width: '100px', margin: '2px'}}
+                      className="img-fluid float-start"
+                    >
+                      <CardItem card={card} isloading cardsCol={12}  detailCard={false} popUp={false} />     
+                  </div>     
                 ))}
               </div>
             </div>
