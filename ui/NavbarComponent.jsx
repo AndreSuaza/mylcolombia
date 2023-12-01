@@ -20,7 +20,7 @@ export const NavbarComponent = () => {
             <Navbar.Collapse className="justify-content-end">
               <Nav className="fontTitle text-uppercase">
                   <NavLink to="/cartas" className={({isActive}) => isActive ? 'nav-link active ms-3' :  'nav-link ms-3'}>Cartas</NavLink>
-                  <NavLink to="/banlist" className={({isActive}) => isActive ? 'nav-link active ms-3' :  'nav-link ms-3'}>Lista de Baneos</NavLink>
+                  <NavLink to="/banlist" className={({isActive}) => isActive ? 'nav-link active ms-3' :  'nav-link ms-3'}>Limitadas o Prohibidas</NavLink>
                   <NavLink to="/decklist" className={({isActive}) => isActive ? 'nav-link active ms-3' :  'nav-link ms-3'}>Crea tu Mazo</NavLink>
               </Nav>
             </Navbar.Collapse>

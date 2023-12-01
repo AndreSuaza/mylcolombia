@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { TYPES, RACES } from "../constants/constants";
+import { Link } from "react-router-dom";
 
 export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true, popUp = true }) => {
 
@@ -128,7 +129,9 @@ export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true, po
               <p className="card-text text-white">{card.ability}</p>
               { price && <p className="card-text text-success"><b>Precio:</b>  {`$${price}`}</p>}
               <div>
-                <strong>Aviso!</strong><p style={{fontSize: 12}}> El precio que se muestra en esta página es una estimación y no representa el valor <b>Real</b>.</p>
+                <a href={`https://wa.me/573022143430/?text=Quiero comprar ${card.name}`} target="_blank">
+                  <span className="btn btn-primary text-white">Comprar ahora <img src="ws.svg" width={30}/></span>
+                </a>
               </div>
             </div>
           </div>
