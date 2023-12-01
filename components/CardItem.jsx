@@ -129,7 +129,7 @@ export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true, po
               <p className="card-text text-white">{card.ability}</p>
               { price && <p className="card-text text-success"><b>Precio:</b>  {`$${price}`}</p>}
               <div>
-                <a href={`https://wa.me/573022143430/?text=Quiero comprar ${card.name}`} target="_blank">
+                <a href={`https://wa.me/573022143430/?text=Hola, quiero comprar ${card.name}`} target="_blank">
                   <span className="btn btn-primary text-white">Comprar ahora <img src="ws.svg" width={30}/></span>
                 </a>
               </div>
