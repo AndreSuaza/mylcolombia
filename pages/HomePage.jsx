@@ -11,6 +11,9 @@ export const HomePage = () => {
       <div className="my-4 container text-center">
         <h2 className="mb-4 text-white">Expansiones en Formato</h2>
         <div className="row">
+          <div className="col-lg-3 col-md-4 col-xs-4 mt-2">
+              <img src="./exp/explorandum.png" alt="" width={100}/>
+          </div>
           <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
               <img src="./exp/despertar_gotico.png" alt="" width={100}/>
           </div>
@@ -20,15 +23,15 @@ export const HomePage = () => {
           <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
               <img src="./exp/acero.png" alt="" width={100}/>
           </div>
-          <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
+          <div className="col-lg-3 col-md-4 col-xs-4 mt-2">
               <img src="./exp/angeles-demonios.png" alt="" width={100}/>
           </div>
-          <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
+          {/* <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
               <img src="./exp/tierra-austral.png" alt="" width={100}/>
-          </div>
-          <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
+          </div> */}
+          {/* <div className="col-lg-2 col-md-4 col-xs-4 mt-2">
               <img src="./exp/keltoi.png" alt="" width={100}/>
-          </div>
+          </div> */}
           
           <p className="my-4 text-uppercase">{'para ver al detalle el producto especial de cada expansión '}  
             <NavLink className="text-warning fw-bold" to="/cartas">
