@@ -93,7 +93,13 @@ export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true, po
             {ban['imperio'] &&  <span className="bg-danger text-white bg-opacity-75 fs-6 px-2 rounded-start d-block mb-1 text-start">{`Imp: ${ban['imperio']}`}</span>}
             {ban['vcr']  && <span className="bg-primary text-white bg-opacity-75 fs-6 px-2 rounded-start d-block mb-1 text-start" style={{marginTop:30}}>{`Vcr: ${ban['vcr']}`}</span>}
           </div>
-        })}   
+        })}
+        <div className="position-absolute bottom-0 end-0 mb-5   ">
+            <a href={`https://wa.me/573022143430/?text=Hola, quiero comprar ${card.name}`} target="_blank">
+              <img src="bws.png" width={30}/>
+            </a>   
+        </div>
+        
       </>
     }
     </div>
@@ -129,7 +135,7 @@ export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true, po
               <p className="card-text text-white">{card.ability}</p>
               { price && <p className="card-text text-success"><b>Precio:</b>  {`$${price}`}</p>}
               <div>
-                <a href={`https://wa.me/573022143430/?text=Hola, quiero comprar ${card.name}`} target="_blank">
+                <a href={`https://wa.me/573022143430/?text=Hola, quiero comprar ${name}`} target="_blank">
                   <span className="btn btn-primary text-white">Comprar ahora <img src="ws.svg" width={30}/></span>
                 </a>
               </div>
