@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { TYPES, RACES } from "../constants/constants";
 import { Link } from "react-router-dom";
 
-export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true, popUp = true }) => {
+export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true}) => {
 
   const { edid, ed_edid: edition , name, banlist = [] ,price } = card;
 
@@ -45,7 +45,7 @@ export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true, po
   }, [detail])
 
   const onShowDetail = () => {
-    if(popUp){
+    if(detailCard){
       setDetail(!detail);
     }
   }
@@ -94,12 +94,13 @@ export const CardItem = ({ card , isloading, cardsCol='3', detailCard = true, po
             {ban['vcr']  && <span className="bg-primary text-white bg-opacity-75 fs-6 px-2 rounded-start d-block mb-1 text-start" style={{marginTop:30}}>{`Vcr: ${ban['vcr']}`}</span>}
           </div>
         })}
+        { detailCard && 
         <div className="position-absolute bottom-0 end-0 mb-5   ">
             <a href={`https://wa.me/573022143430/?text=Hola, quiero comprar ${card.name}`} target="_blank">
               <img src="bws.png" width={30}/>
             </a>   
         </div>
-        
+        }
       </>
     }
     </div>

@@ -150,7 +150,7 @@ export const DeckListPage = () => {
                       style={{width: '100px', margin: '2px'}}
                       className="img-fluid float-start"
                     >
-                      <CardItem card={card} isloading cardsCol={12}  detailCard={false} popUp={false} />     
+                      <CardItem card={card} isloading cardsCol={12}  detailCard={false} />     
                   </div>     
                 ))}
               </div>
