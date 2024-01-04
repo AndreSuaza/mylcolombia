@@ -70,6 +70,7 @@ export const FiltersCards = () => {
   }
   
   const onSearchCards = () => {
+    console.log('click');
     let query = '';
   
     if (filtersCards.term !== '') {

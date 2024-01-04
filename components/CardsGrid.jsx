@@ -1,7 +1,7 @@
 import { CardItem } from "./CardItem";
 
 
-export const CardsGrid = ({ data, isloading, cardsCol, detailCard }) => {
+export const CardsGrid = ({ data, isloading, cardsCol=3, detailCard, click }) => {
 
     const cards = data ? data : [];
 
@@ -14,9 +14,14 @@ export const CardsGrid = ({ data, isloading, cardsCol, detailCard }) => {
                     <h1>Cargando... </h1>
                     :
                     cards.map( ( card ) => (
-
-                        
-                        <CardItem key={ card.id } card={card} isloading={isloading} cardsCol={cardsCol}  detailCard={detailCard}/>
+                        <div 
+                            key={card.id}
+                            className={`col-lg-${cardsCol} col-md-6 col-xs-12 mb-2 position-relative my-2`}
+                            onClick={() => click(card)}
+                            style={{paddingRight: '0'}}
+                        >
+                            <CardItem card={card} isloading={isloading} detailCard={detailCard}/>
+                        </div>
                         
                     ))
                 }

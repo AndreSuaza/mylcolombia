@@ -15,7 +15,7 @@ export const Pagination = ({ page , totalCount , limit , currentPage = 0, isLoad
 
     return (
         !isLoading && 
-            <ul className="pagination">
+            <ul className="pagination my-4">
                 <li className={currentPage -1 > 0 ? "page-item": "page-item disabled"}>
                     <span 
                         className="page-link text-warning"

@@ -4,9 +4,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 export const NavbarComponent = () => {
+  
   return (
     <>
-    <Navbar expand="lg" bg="dark" data-bs-theme="dark" className="fixed-top border-bottom">
+    <Navbar expand="lg" bg="dark" data-bs-theme="dark" className="navbar-expand-lg border-bottom sticky-top">
         <Container>
             <NavLink to="/">
               <img
@@ -22,11 +23,11 @@ export const NavbarComponent = () => {
                   <NavLink to="/cartas" className={({isActive}) => isActive ? 'nav-link active ms-3' :  'nav-link ms-3'}>Cartas</NavLink>
                   <NavLink to="/banlist" className={({isActive}) => isActive ? 'nav-link active ms-3' :  'nav-link ms-3'}>Limitadas o Prohibidas</NavLink>
                   <NavLink to="/decklist" className={({isActive}) => isActive ? 'nav-link active ms-3' :  'nav-link ms-3'}>Crea tu Mazo</NavLink>
+                  {/* <NavLink to="/products" className={({isActive}) => isActive ? 'nav-link active ms-3' :  'nav-link ms-3'}>Productos</NavLink> */}
               </Nav>
             </Navbar.Collapse>
         </Container>
     </Navbar>
-    <div style={{height: 50}}></div>
     </>
   )
 }

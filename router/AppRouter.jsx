@@ -5,6 +5,8 @@ import { NavbarComponent } from "../ui/NavbarComponent"
 import { Footer } from "../ui/Footer"
 import { BanListPage } from "../pages/BanListPage"
 import { DeckListPage } from "../pages/DeckListPage"
+import { ProductsPage } from "../pages/ProductsPage"
+import { DeckCreatePage } from "../pages/DeckCreatePage"
 
 export const AppRouter = () => {
   return (
@@ -14,7 +16,8 @@ export const AppRouter = () => {
             <Route path="/home" element={ <HomePage/> }/>
             <Route path="/cartas" element={ <CartasPage/> }/>
             <Route path="/banlist" element={ <BanListPage/> }/>
-            <Route path="/decklist" element={ <DeckListPage/> }/>
+            <Route path="/decklist" element={ <DeckCreatePage/> }/>
+            {/* <Route path="/products" element={ <DeckCreatePage/> }/> */}
             <Route path="/*" element={ <HomePage/> }/>
         </Routes>
         <Footer/>
