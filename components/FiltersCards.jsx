@@ -134,9 +134,9 @@ export const FiltersCards = () => {
   };
 
   return (
-    <div className="container text-center">
+    <div className="text-center">
       <div className="row align-items-center">
-        <div className="col-6 mb-3">
+        <div className="col-lg-6 col-md-6 col-xs-12 mb-3">
           <input 
             className="form-control"
             placeholder="Palabra o Termino"
@@ -144,7 +144,7 @@ export const FiltersCards = () => {
             onChange={onInputChange}
           />
         </div>
-        <div className="col-6">
+        <div className="col-lg-6 col-md-6 col-xs-12 ">
           <p className="text-success">Puedes buscar por varias palabras separandolas por comas ejemplo: <b>vampiro, sombra, daño</b></p>
         </div>
         <div className="col-lg-4 col-md-6 col-xs-12  mb-3">

@@ -40,7 +40,7 @@ export const DeckCreatePage = () => {
   return (
     <div className="row g-0">
       <div className="col my-4">
-        <CardFinder clickMethod={addCard} limit={100} cols={4}/>
+        <CardFinder clickMethod={addCard} limit={100} cols={4} pagLittle={true}/>
       </div>
       <div className="col border-start border-primary">
         <CreateDeck deck={deck} modifyNumberCards={modifyNumberCards}/>

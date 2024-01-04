@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from "react";
 
-export const Pagination = ({ page , totalCount , limit , currentPage = 0, isLoading }) => {
+export const Pagination = ({ page , totalCount , limit , currentPage = 0, isLoading, little = false }) => {
   
     const [pageNumber, setPageNumber] = useState([])
 
@@ -25,16 +25,18 @@ export const Pagination = ({ page , totalCount , limit , currentPage = 0, isLoad
                         <span aria-hidden="true">&laquo;</span>
                     </span>
                 </li>
-                { pageNumber.map((i) => {
-                    if( i <=10 ) {
-                        return <li key={i} className="page-item">
-                            <span 
-                                className={ i === currentPage ? "page-link text-warning bg-primary" : "page-link text-warning"}
-                                onClick={() => page(i) }
-                            >{i}</span>
-                        </li>
-                    }
-                })}
+                { !little && 
+                    pageNumber.map((i) => {
+                        if( i <=10 ) {
+                            return <li key={i} className="page-item">
+                                <span 
+                                    className={ i === currentPage ? "page-link text-warning bg-primary" : "page-link text-warning"}
+                                    onClick={() => page(i) }
+                                >{i}</span>
+                            </li>
+                        }
+                    })
+                }
                 <li className={currentPage < pageNumber.length ? "page-item": "page-item disabled"}>
                     <span 
                         className="page-link text-warning" 

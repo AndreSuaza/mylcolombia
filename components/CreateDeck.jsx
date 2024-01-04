@@ -27,9 +27,9 @@ export const CreateDeck = ({deck, modifyNumberCards}) => {
 
   return (
     <>
-      <section className="m-3 mb-lg-5 pb-5 position-fixed overflow-y-auto" style={{width: "48%", height: "100%"}}>
-        <div className="row">
-          <div className="col-6">
+      <section className="my-3 mb-lg-5 pb-5 position-fixed overflow-y-auto" style={{width: "48%", height: "100%"}}>
+        <div className="row mx-3">
+          <div className="col-lg-6 col-md-6 col-xs-12 mb-2">
           <input 
             className="form-control"
             placeholder="Nombre Del Mazo"
@@ -37,10 +37,10 @@ export const CreateDeck = ({deck, modifyNumberCards}) => {
             onChange={onInputChange}
           />
           </div>
-          <div className="col-3">
+          <div className="col-lg-3 col-md-6 col-xs-12 mb-2">
             <div className="text-white pt-1">Total Cartas: { totalCards }</div>
           </div>
-          <div className="col-3">
+          <div className="col-lg-3 col-md-6 col-xs-12 mb-2">
           <button 
             className="btn btn-primary"
             onClick={modalOpenClose}
@@ -66,7 +66,7 @@ export const CreateDeck = ({deck, modifyNumberCards}) => {
               <div 
                 key={data.card.id} 
                 className={`col-lg-2 col-md-6 col-xs-12 mb-2 position-relative`} 
-                style={{paddingRight: '0'}}
+                style={{paddingRight: '0',}}
                 
               >
                 <div onClick={() => modifyNumberCards(data, '-')}>

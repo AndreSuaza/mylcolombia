@@ -7,6 +7,7 @@ export const DeckListImage = ({showModal, name, deck}) => {
   const exportRef = useRef();
 
   const exportAsImage = async (element, imageFileName) => {
+    console.log(element);
     const canvas = await html2canvas(element, {useCORS: true} );
     const image = canvas.toDataURL("image/png", 1.0);
     downloadImage(image, imageFileName);
@@ -30,7 +31,7 @@ export const DeckListImage = ({showModal, name, deck}) => {
     <section>
           <div className="modalMyl">
             
-            <div className="modalMyl-content bg-dark position-relative p-4 border border-primary rounded" style={{minHeight: "90%"}} >
+            <div className="modalMyl-content bg-dark position-relative p-4 border border-primary rounded overflow-auto" style={{minHeight: "90%"}} >
               <div className="close text-right position-absolute end-0 ">
                 
                 <button 
@@ -42,6 +43,7 @@ export const DeckListImage = ({showModal, name, deck}) => {
                 <span className="me-3" onClick={() => showModal()}>&times;</span>
               </div>
               <div 
+                id='mainImage'
                 className="row bg-dark mt-2" 
                 ref={exportRef}
                 style={{
@@ -52,11 +54,12 @@ export const DeckListImage = ({showModal, name, deck}) => {
                   backgroundRepeat: 'no-repeat',
                   minHeight: 120,
                   paddingBottom: 40,  
+                  minWidth: '1200px',
                 }}
               >
                 <h1 className="text-white mb-4">Mazo {name}</h1>
                 {deck.map( data => data && 
-                    <div key={data.card.id} className={`col-lg-2 col-md-6 col-xs-12 mb-4 position-relative`} style={{paddingRight: '0'}}>
+                    <div key={data.card.id} className={`col-2 mb-4 position-relative`} style={{paddingRight: '0'}}>
                       <CardItem card={data.card} detailCard={false}/>
                       <div 
                         className="lh-sm position-absolute lh-1 text-dark top-0 end-50 col text-center bg-primary p-2 rounded"

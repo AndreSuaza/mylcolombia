@@ -4,7 +4,7 @@ import { CardsGrid } from "./CardsGrid"
 import { FiltersCards } from "./FiltersCards"
 import { useLocation } from "react-router-dom";
 
-export const CardFinder = ({clickMethod, limit, detail = false, cols=3}) => {
+export const CardFinder = ({clickMethod, limit, detail = false, cols=3, pagLittle = false}) => {
 
   const location = useLocation();  
   const [cardsData, setCardsData] = useState({cards: [],count: 0,});
@@ -56,7 +56,7 @@ export const CardFinder = ({clickMethod, limit, detail = false, cols=3}) => {
   };
 
   return (
-    <section className="container mt-4 mb-lg-5 pb-5">
+    <section className="container mt-4 mb-lg-5 pb-5 px-0">
         <div className="card my-3">
           <div className="card-body">
               <h5 className="card-title mb-3 text-warning">Busca tu carta</h5>
@@ -64,9 +64,9 @@ export const CardFinder = ({clickMethod, limit, detail = false, cols=3}) => {
           </div>
         </div>
         <div id="inicio" className="pt-4">
-        <Pagination page={pageCards} currentPage={currentPage} totalCount={cardsData.count} limit={limit} isloading={state.isloading}/>
+        <Pagination page={pageCards} currentPage={currentPage} totalCount={cardsData.count} limit={limit} isloading={state.isloading} little={pagLittle}/>
             <CardsGrid data={cardsData.cards}  cardsCol={cols} isloading={state.isloading} click={clickMethod} detailCard={detail}/>
-        <Pagination page={pageCards} currentPage={currentPage} totalCount={cardsData.count} limit={limit} isloading={state.isloading}/>
+        <Pagination page={pageCards} currentPage={currentPage} totalCount={cardsData.count} limit={limit} isloading={state.isloading} little={pagLittle}/>
         </div>
     </section>
   )
