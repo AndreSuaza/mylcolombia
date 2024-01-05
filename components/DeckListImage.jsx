@@ -40,7 +40,7 @@ export const DeckListImage = ({showModal, name, deck}) => {
       </div>
       <div 
         id='mainImage'
-        className="row bg-dark mt-2" 
+        className="row bg-dark p-4" 
         ref={exportRef}
         style={{
           backgroundImage: `url('./logo-dl.png')`,
