@@ -51,7 +51,7 @@ export const FiltersCards = () => {
   const onInputChange = ({target}) => {
       setFiltersCards({
       ...filtersCards,
-      term: target.value
+      term: target.value.trim()
     })
   }
 
