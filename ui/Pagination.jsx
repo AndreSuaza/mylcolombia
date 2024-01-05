@@ -10,7 +10,6 @@ export const Pagination = ({ page , totalCount , limit , currentPage = 0, isLoad
             pages = [...pages, i];
         }
         setPageNumber(pages);
-        console.log(totalCount, limit);
     }, [totalCount])
 
     return (

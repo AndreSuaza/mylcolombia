@@ -1,10 +1,28 @@
 import { CreateDeck } from "../components/CreateDeck";
 import { CardFinder } from "../components/CardFinder";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { DeckListImage } from "../components/DeckListImage";
+import { DeckListFuntions } from "../components/DeckListFuntions";
 
 export const DeckCreatePage = () => {
 
   const [deck, setDeck] = useState([]);
+  const [showDeckList, setShowDeckList] = useState(false);
+  const [showExportDeckList, setShowExportDeckList] = useState(false);
+  const [showImportDeckList, setShowImportDeckList] = useState(false);
+  const [totalCards, setTotalCards] = useState(0);
+  const [nameDeck, setNameDeck] = useState("");
+  const [codeDeck, setCodeDeck] = useState("");
+
+  useEffect(() => {
+
+    setTotalCards(deck.reduce((a, b) => a + parseInt(b.copys), 0));
+
+  }, [deck])
+
+  const onInputChange = ({target}) => {
+    setNameDeck(target.value);
+  }
 
   const modifyNumberCards = (dataCard, operation) => {
     
@@ -24,7 +42,6 @@ export const DeckCreatePage = () => {
 
   }
 
-  
   const addCard = (card) => {
 
     const foundCard = deck.find(cardDeck =>  cardDeck.card.name === card.name); 
@@ -35,7 +52,61 @@ export const DeckCreatePage = () => {
     }
   }
 
+  const modalOpenClose = () => {
+    setShowDeckList(!showDeckList);
+  }
 
+  const modalOpenCloseExportDeckList = () => {
+    setShowExportDeckList(!showExportDeckList);
+  }
+
+  const modalOpenCloseImportDeckList = () => {
+    setShowImportDeckList(!showImportDeckList);
+  }
+
+  const getFetch = async ( decklist ) => {
+
+    const resp = await fetch( `https://us-east-1.aws.data.mongodb-api.com/app/data-xeoot/endpoint/getDecklist?decklist=${decklist}` );
+    const data = await resp.json();
+
+    return data;
+  }
+
+  const createDeckList = ( deckOrigin, cards) => {
+    const deck = [];
+
+    cards.forEach(card => {
+      for (let index = 0; index < deckOrigin.length; index++) {
+        if(card.id === deckOrigin[index])
+          deck.push({card, copys: deckOrigin[index+1] > 0 ? deckOrigin[index+1] : 0 })
+      }
+    });
+
+    setDeck(deck);
+
+  }
+
+  const exportDeck = () => {
+    let exportText = "";
+    deck.map( data => exportText = exportText+data.card.id+","+data.copys+",");
+    setCodeDeck(exportText);
+    setShowExportDeckList(true);
+   
+  }
+
+  const importDeck = ( code ) => {
+    //let code = "14431,3,14430,1,14432,1,14433,2,14434,2,14436,2,14437,2,14435,2,14438,1,14439,2,14440,2,14443,2,14442,1,14441,1,14444,1,14445,1,14446,1,"
+
+    let deckListIds = "";
+    
+    const decklist = code.split(',');
+    const ids = decklist.filter ( (elemet, index) => !(index % 2) );
+    
+    ids.map( data => deckListIds = deckListIds+data+",");
+   
+    getFetch(deckListIds).then( data => createDeckList(decklist, data));
+
+  }
 
   return (
     <div className="row g-0">
@@ -43,7 +114,50 @@ export const DeckCreatePage = () => {
         <CardFinder clickMethod={addCard} limit={100} cols={4} pagLittle={true}/>
       </div>
       <div className="col border-start border-primary">
-        <CreateDeck deck={deck} modifyNumberCards={modifyNumberCards}/>
+        <section className="my-3 mb-lg-5 pb-5 position-fixed overflow-y-auto" style={{width: "48%", height: "100%"}}>
+        <div className="row mx-3">
+            <div className="col-lg-4 col-md-6 col-xs-12 mb-2">
+            <input 
+              className="form-control"
+              placeholder="Nombre Del Mazo"
+              value={nameDeck}
+              onChange={onInputChange}
+            />
+            </div>
+            <div className="col-lg-2 col-md-6 col-xs-12 mb-2">
+              <div className="text-white pt-1">Total Cartas: { totalCards }</div>
+            </div>
+            <div className="col-lg-6 col-md-6 col-xs-12 mb-2 text-end">
+              <button 
+                className="btn btn-primary m-1"
+                onClick={modalOpenClose}
+
+              >
+                Imagen
+              </button>
+
+              <button 
+                className="btn btn-primary m-1"
+                onClick={exportDeck}
+
+              >
+                Exportar 
+              </button>
+
+              <button 
+                className="btn btn-primary m-1"
+                onClick={modalOpenCloseImportDeckList}
+
+              >
+                Importar
+              </button>
+            </div>
+          </div>
+          <CreateDeck deck={deck} modifyNumberCards={modifyNumberCards}/>
+          </section>
+          {showDeckList && <DeckListImage showModal={modalOpenClose} name={nameDeck} deck={deck}/>}
+          {showExportDeckList && <DeckListFuntions showModal={modalOpenCloseExportDeckList} codeDeck={codeDeck} type={false} />}
+          {showImportDeckList && <DeckListFuntions showModal={modalOpenCloseImportDeckList} name={nameDeck} accion={importDeck}/>}
       </div>
     </div>
   )

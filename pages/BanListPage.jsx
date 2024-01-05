@@ -65,7 +65,6 @@ const organizeBanList = (data) => {
 
 useEffect(() => {
     getFetch(0);
-    console.log(cardsData);
 }, [])
 
   return (

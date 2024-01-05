@@ -1,55 +1,9 @@
-import { useEffect, useRef, useState } from "react";
 import { CardItem } from "../components/CardItem";
-import { DeckListImage } from "./DeckListImage";
-
 
 export const CreateDeck = ({deck, modifyNumberCards}) => {
 
-  const [showDeckList, setShowDeckList] = useState(false);
-  const [nameDeck, setNameDeck] = useState("");
-  const [totalCards, setTotalCards] = useState(0);
-
-  const modalOpenClose = () => {
-    console.log('entra', showDeckList)
-    setShowDeckList(!showDeckList);
-  }
-
-  const onInputChange = ({target}) => {
-    setNameDeck(target.value);
-  }
-
-  useEffect(() => {
-
-    setTotalCards(deck.reduce((a, b) => a + b.copys, 0));
-
-  }, [deck])
-  
-
   return (
     <>
-      <section className="my-3 mb-lg-5 pb-5 position-fixed overflow-y-auto" style={{width: "48%", height: "100%"}}>
-        <div className="row mx-3">
-          <div className="col-lg-6 col-md-6 col-xs-12 mb-2">
-          <input 
-            className="form-control"
-            placeholder="Nombre Del Mazo"
-            value={nameDeck}
-            onChange={onInputChange}
-          />
-          </div>
-          <div className="col-lg-3 col-md-6 col-xs-12 mb-2">
-            <div className="text-white pt-1">Total Cartas: { totalCards }</div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-xs-12 mb-2">
-          <button 
-            className="btn btn-primary"
-            onClick={modalOpenClose}
-
-          >
-            Imagen <i className="bi bi-cloud-download"></i>
-          </button>
-          </div>
-        </div>
         <div 
           className="row px-3 pt-4 bg-dark"
           style={{
@@ -72,7 +26,7 @@ export const CreateDeck = ({deck, modifyNumberCards}) => {
                 <div onClick={() => modifyNumberCards(data, '-')}>
                   <CardItem card={data.card} detailCard={false} />
                 </div>
-              <div className="lh-sm position-absolute lh-1 text-dark top-50 end-0 bg-primary col text-center">
+                <div className="lh-sm position-absolute lh-1 text-dark top-50 end-0 bg-primary col text-center">
                   <div 
                   className="border-bottom px-1 cursor-pointer"
                   style={{lineHeight: 1, paddingBottom: 3}}
@@ -86,16 +40,13 @@ export const CreateDeck = ({deck, modifyNumberCards}) => {
                   <div 
                   className="px-1 cursor-pointer bg-primary"
                   style={{lineHeight: 1, paddingBottom: 3}}
-                  onClick={() => modifyNumberCards(data, '-')}
+                  onClick={() => modifyNumberCards(data, '-')}  
                   >-</div>
-              </div>
+                </div>
               </div>
           )}          
             
       </div>
-      </section>
-      {showDeckList && <DeckListImage showModal={modalOpenClose} name={nameDeck} deck={deck}/>
-      }
     </>
   )
 }

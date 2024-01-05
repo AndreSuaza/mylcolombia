@@ -57,7 +57,7 @@ export const CardFinder = ({clickMethod, limit, detail = false, cols=3, pagLittl
 
   return (
     <section className="container mt-4 mb-lg-5 pb-5 px-0">
-        <div className="card my-3">
+        <div className="card my-3" >
           <div className="card-body">
               <h5 className="card-title mb-3 text-warning">Busca tu carta</h5>
               <FiltersCards/> 
