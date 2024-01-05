@@ -51,7 +51,7 @@ export const FiltersCards = () => {
   const onInputChange = ({target}) => {
       setFiltersCards({
       ...filtersCards,
-      term: target.value.trim()
+      term: target.value
     })
   }
 
@@ -73,7 +73,7 @@ export const FiltersCards = () => {
     let query = '';
   
     if (filtersCards.term !== '') {
-      query += '&text='+termsFormat(filtersCards.term);
+      query += '&text='+termsFormat(filtersCards.term.trim());
     }
 
     if (filtersCards.editions !== '') {
