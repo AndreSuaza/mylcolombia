@@ -141,6 +141,10 @@ export const DeckCreatePage = () => {
     setDeck(sortedDecklist);
   }
 
+  const clearDeck = () => {
+    setDeck([]);
+  }
+
   return (
     <div className="row g-0">
       <div className="col my-4">
@@ -190,6 +194,13 @@ export const DeckCreatePage = () => {
 
               >
                <i class="bi bi-list-ol"></i>
+              </button>
+              <button 
+                className="btn btn-primary m-1"
+                onClick={clearDeck}
+
+              >
+               <i class="bi bi-trash"></i>
               </button>
             </div>
           </div>

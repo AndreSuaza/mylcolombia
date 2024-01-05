@@ -62,7 +62,7 @@ export const DeckListImage = ({showModal, name, deck}) => {
               <CardItem card={data.card} detailCard={false}/>
               <div 
                 className="lh-sm position-absolute lh-1 text-dark top-0 end-50 col text-center bg-primary p-2 rounded"
-                style={{marginTop: -15, marginRight: -15}}
+                style={{marginTop: -15, marginRight: -25}}
               >
                   <div className="fs-4 text-dark text-center fw-bold">
                     {data.copys}

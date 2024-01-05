@@ -5,7 +5,7 @@ export const CreateDeck = ({deck, modifyNumberCards}) => {
   return (
     <>
         <div 
-          className="row px-3 pt-4 bg-dark"
+          className="row px-3 pt-4 bg-dark border"
           style={{
             backgroundImage: `url('./logo-dl.png')`,
             backgroundPositionX: 'right',
@@ -23,6 +23,7 @@ export const CreateDeck = ({deck, modifyNumberCards}) => {
                 style={{paddingRight: '0',}}
                 
               >
+                {/* <div className="border border-primary rounded" onClick={() => modifyNumberCards(data, '-')}> */}
                 <div onClick={() => modifyNumberCards(data, '-')}>
                   <CardItem card={data.card} detailCard={false} />
                 </div>
