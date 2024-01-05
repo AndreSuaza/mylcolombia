@@ -59,7 +59,7 @@ export const DeckListImage = ({showModal, name, deck}) => {
         <h1 className="text-white mb-4">Mazo {name}</h1>
           {deck.map( data => data && 
             <div key={data.card.id} className={`col-2 mb-4 position-relative`} style={{paddingRight: '0'}}>
-              <CardItem card={data.card} detailCard={false}/>
+              <CardItem card={data.card} detailCard={false} zoom={false}/>
               <div 
                 className="lh-sm position-absolute lh-1 text-dark top-0 end-50 col text-center bg-primary p-2 rounded"
                 style={{marginTop: -15, marginRight: -25}}

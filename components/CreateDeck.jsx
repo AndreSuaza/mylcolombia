@@ -24,9 +24,8 @@ export const CreateDeck = ({deck, modifyNumberCards}) => {
                 
               >
                 {/* <div className="border border-primary rounded" onClick={() => modifyNumberCards(data, '-')}> */}
-                <div onClick={() => modifyNumberCards(data, '-')}>
-                  <CardItem card={data.card} detailCard={false} />
-                </div>
+
+                <CardItem card={data.card} detailCard={false} clickInImage={() => modifyNumberCards(data, '-')}/>
                 <div className="lh-sm position-absolute lh-1 text-dark top-50 end-0 bg-primary col text-center">
                   <div 
                   className="border-bottom px-1 cursor-pointer"

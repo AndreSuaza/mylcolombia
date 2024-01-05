@@ -1,6 +1,6 @@
 export const Modal = ({children, closeModal, size = "90%"}) => {
   return (
-    <section>
+    <section style={{zIndex: 10}}>
     <div className="modalMyl">
       
       <div className="modalMyl-content bg-dark position-relative p-4 border border-primary rounded overflow-auto" style={{minHeight: size, width: size}} >
