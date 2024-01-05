@@ -164,7 +164,7 @@ export const DeckCreatePage = () => {
             <div className="col-lg-2 col-md-6 col-xs-12 mb-2">
               <div className="text-white pt-1"># Cartas: { totalCards }</div>
             </div>
-            <div className="col-lg-7 col-md-6 col-xs-12 mb-2 text-end">
+            <div className="col-lg-7 col-md-6 col-xs-12 mb-2 text-start">
               <button 
                 className="btn btn-primary m-1"
                 onClick={modalOpenClose}

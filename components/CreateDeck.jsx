@@ -5,7 +5,7 @@ export const CreateDeck = ({deck, modifyNumberCards}) => {
   return (
     <>
         <div 
-          className="row px-3 pt-4 bg-dark border"
+          className="row px-3 py-4 bg-dark border"
           style={{
             backgroundImage: `url('./logo-dl.png')`,
             backgroundPositionX: 'right',
