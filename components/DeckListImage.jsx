@@ -30,6 +30,14 @@ export const DeckListImage = ({showModal, name, deck}) => {
   return (
 
     <Modal closeModal={showModal}>
+      <div className='text-end position-absolute top-0 end-0 m-4'>
+          <button 
+              className="btn btn-primary me-4"
+              onClick={() => exportAsImage(exportRef.current, name)}
+              >
+              Guardar <i className="bi bi-cloud-download"></i>
+          </button>
+      </div>
       <div 
         id='mainImage'
         className="row bg-dark mt-2" 
@@ -46,14 +54,7 @@ export const DeckListImage = ({showModal, name, deck}) => {
           minHeight: '230px'
         }}
       >
-        <div className='text-end position-absolute top-0 end-0 m-4'>
-          <button 
-              className="btn btn-primary me-4"
-              onClick={() => exportAsImage(exportRef.current, name)}
-              >
-              Guardar <i className="bi bi-cloud-download"></i>
-          </button>
-        </div>
+        
 
         <h1 className="text-white mb-4">Mazo {name}</h1>
           {deck.map( data => data && 
