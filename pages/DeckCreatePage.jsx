@@ -108,6 +108,39 @@ export const DeckCreatePage = () => {
 
   }
 
+  const sortByType = () => {
+    console.log('sss',deck)
+    const aliados = [], talismanes = [], armas = [], oros = [], totems = [], otros = [];
+
+    deck.map( data => {
+
+      switch (data.card.type) {
+        case "1":
+          aliados.push(data);
+          break;
+        case "2":
+          talismanes.push(data);
+          break;
+        case "3":
+          armas.push(data);
+        break;
+        case "4":
+          totems.push(data);
+          break;  
+        case "5":
+          oros.push(data);
+          break;
+        default:
+          otros.push(data);
+          break;
+      }
+
+    })
+    
+    const sortedDecklist = [...aliados, ...talismanes, ...armas, ...totems, ...oros, ...otros];
+    setDeck(sortedDecklist);
+  }
+
   return (
     <div className="row g-0">
       <div className="col my-4">
@@ -116,7 +149,7 @@ export const DeckCreatePage = () => {
       <div className="col border-start border-primary">
         <section className="my-3 mb-lg-5 pb-5 position-fixed overflow-y-auto" style={{width: "48%", height: "100%"}}>
         <div className="row mx-3">
-            <div className="col-lg-4 col-md-6 col-xs-12 mb-2">
+            <div className="col-lg-3 col-md-6 col-xs-12 mb-2">
             <input 
               className="form-control"
               placeholder="Nombre Del Mazo"
@@ -125,15 +158,15 @@ export const DeckCreatePage = () => {
             />
             </div>
             <div className="col-lg-2 col-md-6 col-xs-12 mb-2">
-              <div className="text-white pt-1">Total Cartas: { totalCards }</div>
+              <div className="text-white pt-1"># Cartas: { totalCards }</div>
             </div>
-            <div className="col-lg-6 col-md-6 col-xs-12 mb-2 text-end">
+            <div className="col-lg-7 col-md-6 col-xs-12 mb-2 text-end">
               <button 
                 className="btn btn-primary m-1"
                 onClick={modalOpenClose}
 
               >
-                Imagen
+                <i class="bi bi-card-image"></i>
               </button>
 
               <button 
@@ -150,6 +183,13 @@ export const DeckCreatePage = () => {
 
               >
                 Importar
+              </button>
+              <button 
+                className="btn btn-primary m-1"
+                onClick={sortByType}
+
+              >
+               <i class="bi bi-list-ol"></i>
               </button>
             </div>
           </div>
