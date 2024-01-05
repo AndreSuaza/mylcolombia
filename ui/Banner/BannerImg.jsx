@@ -38,7 +38,7 @@ export const BannerImg = () => {
                 <p className="font-border text-white text-uppercase fw-bold d-none d-sm-block" style={{fontSize: '3rem'}}>¿Te atreves a desafiar el destino y alcanzar la gloria?</p> 
                 <a 
                     href="https://blog.myl.cl/wp-content/uploads/2021/11/Cuentos-de-Terror-Manual-Iniciatico.pdf" 
-                    className="btn btn-warning text-primary fw-bold btn-lg text-uppercase mt-2 px-4"
+                    className="btn btn-primary text-white fw-bold btn-lg text-uppercase mt-2 px-4"
                     target="_blank" rel="noreferrer"
                     >Aprende a jugar Mitos y Leyendas!</a>
             </div>}

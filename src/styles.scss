@@ -17,8 +17,8 @@ $theme-colors: (
 
 
 [data-bs-theme="dark"] {
-  --bs-body-color: #ffe400;
-  --bs-body-color-rgb: #ffe400;
+  --bs-body-color: #11ad9e;
+  --bs-body-color-rgb: white;
   --bs-body-bg: #010101;
   --bs-body-bg-rgb: #{to-rgb($blue)};
   --bs-tertiary-bg: #{$blue-600};
@@ -29,8 +29,8 @@ $theme-colors: (
   }
 
   .btn-primary {
-    --bs-btn-color: #ffe400;
-    --bs-btn-hover-color: #ffe400;
+    --bs-btn-color: white;
+    --bs-btn-hover-color: white;
   }
 }
 
