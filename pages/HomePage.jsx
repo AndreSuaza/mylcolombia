@@ -41,7 +41,7 @@ export const HomePage = () => {
         </div>
       </div>
       
-      <div className="container">
+      {/* <div className="container">
           <div className="row mb-3 mt-5">
             <div className="col-sm-6 mb-sm-0">
               <div className="card">
@@ -94,7 +94,7 @@ export const HomePage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
     </>
   )
