@@ -3,6 +3,7 @@ import { CardFinder } from "../components/CardFinder";
 import { useEffect, useState } from "react";
 import { DeckListImage } from "../components/DeckListImage";
 import { DeckListFuntions } from "../components/DeckListFuntions";
+import { useLocation } from "react-router-dom";
 
 export const DeckCreatePage = () => {
 
@@ -13,9 +14,10 @@ export const DeckCreatePage = () => {
   const [totalCards, setTotalCards] = useState(0);
   const [nameDeck, setNameDeck] = useState("");
   const [codeDeck, setCodeDeck] = useState("");
+  const location = useLocation();
 
   useEffect(() => {
-
+    console.log('hola', location.search);
     setTotalCards(deck.reduce((a, b) => a + parseInt(b.copys), 0));
 
   }, [deck])

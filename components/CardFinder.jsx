@@ -40,6 +40,7 @@ export const CardFinder = ({clickMethod, limit, detail = false, cols=3, pagLittl
 
   useEffect(() => {
     getFetch(0);
+    pageCards(1);
   }, [location])
 
   const pageCards = (page) => {
