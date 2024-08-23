@@ -48,7 +48,6 @@ export const DeckListImage = ({showModal, name, deck}) => {
           backgroundPositionY: 'bottom',
           backgroundSize: '30%',
           backgroundRepeat: 'no-repeat',
-          minHeight: 120,
           paddingBottom: 40,  
           minWidth: '1200px',
           minHeight: '230px'
