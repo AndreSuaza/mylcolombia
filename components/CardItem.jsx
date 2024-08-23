@@ -64,11 +64,11 @@ export const CardItem = ({ card , detailCard = true, clickInImage, zoom = true})
           style={loaded ? { display: 'inline-block', width: "100%" } : { display: 'none' }}
         />
         </div>
-        {(detailCard && price ) && 
+        {/* {(detailCard && price ) && 
           <div className="position-absolute bottom-0 end-0 ">
             <p className="bg-success text-white bg-opacity-75 fs-6 px-2 rounded-start">{` $ ${price} `}</p>
           </div>
-        }
+        } */}
         { detailCard && banlist.map((ban, index) => {
           return <div key={index} className="position-absolute top-0 end-0" style={{marginTop: 50}}>
             {ban['imperio'] &&  <span className="bg-danger text-white bg-opacity-75 fs-6 px-2 rounded-start d-block mb-1 text-start">{`Imp: ${ban['imperio']}`}</span>}

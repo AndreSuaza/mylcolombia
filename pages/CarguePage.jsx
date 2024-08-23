@@ -6,7 +6,7 @@ export const CarguePage = () => {
 
     const getFetch = async () => {
 
-        const resp = await fetch( `https://api.myl.cl/cards/edition/la_venganza_de_horus`);
+        const resp = await fetch( `https://api.myl.cl/cards/edition/espiritu_samurai`);
         const data = await resp.json();
         
 
