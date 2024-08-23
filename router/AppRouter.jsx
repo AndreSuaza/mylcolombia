@@ -5,7 +5,6 @@ import { NavbarComponent } from "../ui/NavbarComponent"
 import { Footer } from "../ui/Footer"
 import { BanListPage } from "../pages/BanListPage"
 import { DeckCreatePage } from "../pages/DeckCreatePage"
-import { CarguePage } from "../pages/carguePage"
 
 export const AppRouter = () => {
   return (
