@@ -64,24 +64,24 @@ export const CardItem = ({ card , detailCard = true, clickInImage, zoom = true})
           style={loaded ? { display: 'inline-block', width: "100%" } : { display: 'none' }}
         />
         </div>
-        {/* {(detailCard && price ) && 
+        {(detailCard && price ) && 
           <div className="position-absolute bottom-0 end-0 ">
             <p className="bg-success text-white bg-opacity-75 fs-6 px-2 rounded-start">{` $ ${price} `}</p>
           </div>
-        } */}
+        }
         { detailCard && banlist.map((ban, index) => {
           return <div key={index} className="position-absolute top-0 end-0" style={{marginTop: 50}}>
             {ban['imperio'] &&  <span className="bg-danger text-white bg-opacity-75 fs-6 px-2 rounded-start d-block mb-1 text-start">{`Imp: ${ban['imperio']}`}</span>}
             {ban['vcr']  && <span className="bg-primary text-white bg-opacity-75 fs-6 px-2 rounded-start d-block mb-1 text-start" style={{marginTop:30}}>{`Vcr: ${ban['vcr']}`}</span>}
           </div>
         })}
-        {/* { detailCard && price && 
+        { detailCard && price && 
         <div className="position-absolute bottom-0 end-0 mb-5   ">
             <a href={`https://wa.me/573022143430/?text=Hola, quiero comprar ${card.name} - ${card.ed_edid}`} target="_blank">
               <img src="bws.png" width={30}/>
             </a>   
         </div>
-        } */}
+        }
         {showDeckList && <Modal closeModal={modalOpenClose} size="30%" >
           <img 
             ref={imageCard}
