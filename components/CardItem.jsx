@@ -75,13 +75,6 @@ export const CardItem = ({ card , detailCard = true, clickInImage, zoom = true})
             {ban['vcr']  && <span className="bg-primary text-white bg-opacity-75 fs-6 px-2 rounded-start d-block mb-1 text-start" style={{marginTop:30}}>{`Vcr: ${ban['vcr']}`}</span>}
           </div>
         })}
-        { detailCard && price && 
-        <div className="position-absolute bottom-0 end-0 mb-5   ">
-            <a href={`https://wa.me/573022143430/?text=Hola, quiero comprar ${card.name} - ${card.ed_edid}`} target="_blank">
-              <img src="bws.png" width={30}/>
-            </a>   
-        </div>
-        }
         {showDeckList && <Modal closeModal={modalOpenClose} size="30%" >
           <img 
             ref={imageCard}
